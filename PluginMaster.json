@@ -83,5 +83,78 @@
     "DownloadLinkUpdate": "https://github.com/NiGuangOwO/DalamudPlugins/raw/main/plugins/PandorasBox/latest.zip",
     "DownloadCount": 0,
     "LastUpdate": "1733838796"
+  },
+  {
+    "Name": "Daily Routines",
+    "InternalName": "DailyRoutines",
+    "AssemblyVersion": "1.2.9.0",
+    "TestingAssemblyVersion": "1.2.8.3",
+    "Author": "AtmoOmen",
+    "Punchline": "帮忙解决一些日常重复性劳动 / Help with some of the daily repetitive tasks",
+    "Description": "轻量化、低性能消耗、简单的自动化功能/易用性改动合集, 帮你从一些无意义的重复性工作中解放出来\nA collection of lightweight, simple automation features/easy-to-use modules to free you from meaningless repetitive tasks.",
+    "ApplicableVersion": "any",
+    "LoadPriority": 10000,
+    "Tags": [
+      "Daily",
+      "Auto",
+      "日常",
+      "自动"
+    ],
+    "DalamudApiLevel": 10,
+    "TestingDalamudApiLevel": 10,
+    "AcceptsFeedback": true,
+    "RepoUrl": "https://github.com/AtmoOmen/DalamudPlugins",
+    "IconUrl": "https://raw.githubusercontent.com/AtmoOmen/StaticAssets/main/DailyRoutines/image/icon.png",
+    "DownloadLinkInstall": "https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/Plugins/DailyRoutines/latest.zip",
+    "DownloadLinkTesting": "https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/Plugins/DailyRoutines/latest_test.zip",
+    "DownloadLinkUpdate": "https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/Plugins/DailyRoutines/latest.zip"
+  },
+  {
+    "Author": "NiGuangOwO, Small_Miao (moewcorp)",
+    "Name": "NyaDraw",
+    "Punchline": "下一代小画家",
+    "Description": "下一代小画家",
+    "Tags": [
+      "vfx",
+      "omen",
+      "spl"
+    ],
+    "InternalName": "NyaDraw",
+    "AssemblyVersion": "1.0.10.16",
+    "ApplicableVersion": "any",
+    "DalamudApiLevel": 10,
+    "TestingAssemblyVersion": "1.0.9.4",
+    "TestingDalamudApiLevel": 10,
+    "IconUrl": "https://raw.githubusercontent.com/NiGuangOwO/DalamudPlugins/main/plugins/NyaDraw/NyaDraw.png",
+    "DownloadLinkInstall": "https://github.com/NiGuangOwO/DalamudPlugins/raw/main/plugins/NyaDraw/latest.zip",
+    "IsHide": false,
+    "IsTestingExclusive": false,
+    "DownloadLinkUpdate": "https://github.com/NiGuangOwO/DalamudPlugins/raw/main/plugins/NyaDraw/latest.zip",
+    "DownloadCount": 0,
+    "DownloadLinkTesting": "https://github.com/NiGuangOwO/DalamudPlugins/raw/main/plugins/NyaDraw/testing/latest.zip",
+    "LastUpdate": "1733838796"
+  },
+  {
+    "Author": "The Combat Reborn Team / NiGuangOwO（本地化&适配）",
+    "Name": "Bossmod Reborn",
+    "Punchline": "大脑按摩用的(在线安装Only)",
+    "Description": "仅禁用了与后期软件冲突的代码（AI可用，自动循环可能失效）",
+    "InternalName": "BossModReborn",
+    "RepoUrl": "https://github.com/FFXIV-CombatReborn/BossmodReborn",
+    "AssemblyVersion": "7.2.0.181",
+    "ApplicableVersion": "any",
+    "DalamudApiLevel": 10,
+    "IconUrl": "https://raw.githubusercontent.com/FFXIV-CombatReborn/RebornAssets/main/IconAssets/BMR_Icon.png",
+    "ImageUrls": [
+      "https://raw.githubusercontent.com/awgil/ffxiv_bossmod/master/Data/image1.png",
+      "https://raw.githubusercontent.com/awgil/ffxiv_bossmod/master/Data/image2.png",
+      "https://raw.githubusercontent.com/awgil/ffxiv_bossmod/master/Data/image3.png"
+    ],
+    "DownloadLinkInstall": "https://github.com/NiGuangOwO/DalamudPlugins/raw/main/plugins/BossModReborn/latest.zip",
+    "IsHide": false,
+    "IsTestingExclusive": false,
+    "DownloadLinkUpdate": "https://github.com/NiGuangOwO/DalamudPlugins/raw/main/plugins/BossModReborn/latest.zip",
+    "DownloadCount": 0,
+    "LastUpdate": "1733838796"
   }
 ]
