@@ -70,12 +70,16 @@ def ADD_TO_LIST(event):
     if current_select in filter_my_repo_list:
         return
     filter_my_repo_list.append(current_select)
+    global my_Repo_list
+    my_Repo_list = filter_my_repo_list
     list_My_Repo.delete(0, tk.END)
     for _item in filter_my_repo_list:
         list_My_Repo.insert(tk.END, _item["Name"])
 
 def DELETE_FROM_LIST(event):
     filter_my_repo_list.remove(current_select)
+    global my_Repo_list
+    my_Repo_list = filter_my_repo_list
     list_My_Repo.delete(0, tk.END)
     for _item in filter_my_repo_list:
         list_My_Repo.insert(tk.END, _item["Name"])
@@ -143,6 +147,7 @@ for item in filter_plugin_list:  # 第一个小部件插入数据
     list_Repo.insert(tk.END, item["Name"])
 list_Repo.bind("<ButtonRelease-1>", list_select)
 list_Repo.bind("<ButtonRelease-3>", ADD_TO_LIST)
+Repo_Search.bind("<Return>", filter_list)
 Repo_Search.bind("<Return>", filter_list)
 list_Repo.config(yscrollcommand = Repo_scrollbar.set)
 Repo_scrollbar.config(command = list_Repo.yview)

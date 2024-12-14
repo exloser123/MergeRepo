@@ -52,7 +52,7 @@
     ],
     "InternalName": "Artisan",
     "RepoUrl": "https://github.com/PunishXIV/Artisan",
-    "DownloadCount": 2003507,
+    "DownloadCount": 2003513,
     "LastUpdate": 1733126950007,
     "DownloadLinkInstall": "https://puni.sh/api/plugins/download/6/Artisan/versions/latest.zip",
     "DownloadLinkUpdate": "https://puni.sh/api/plugins/download/6/Artisan/versions/latest.zip",
@@ -109,5 +109,28 @@
     "DownloadLinkTesting": "https://github.com/NightmareXIV/Lifestream/releases/download/2.3.2.7/latest.zip",
     "SupportsProfiles": true,
     "IconUrl": "https://raw.githubusercontent.com/NightmareXIV/Lifestream/main/Lifestream/images/icon.png"
+  },
+  {
+    "Author": "NightmareXIV",
+    "Name": "DSR Toolbox",
+    "Punchline": "A helper plugin for Dragonsong's Reprise (Ultimate).",
+    "Description": "Current functions:\nResolve eyes position\nWroth flames automarker (whole group and personal)\nTether to your chain partner",
+    "Changelog": "- Updated for 7.1",
+    "IsHide": false,
+    "InternalName": "DSREyeLocator",
+    "AssemblyVersion": "2.0.1.5",
+    "TestingAssemblyVersion": "2.0.1.4",
+    "IsTestingExclusive": false,
+    "ApplicableVersion": "any",
+    "DalamudApiLevel": 11,
+    "TestingDalamudApiLevel": 10,
+    "DownloadCount": 35753,
+    "LastUpdate": 1732054839,
+    "DownloadLinkInstall": "https://github.com/NightmareXIV/DSREyeLocator/releases/download/2.0.1.5/latest.zip",
+    "DownloadLinkUpdate": "https://github.com/NightmareXIV/DSREyeLocator/releases/download/2.0.1.5/latest.zip",
+    "DownloadLinkTesting": "https://github.com/NightmareXIV/DSREyeLocator/releases/download/2.0.1.4/latest.zip",
+    "SupportsProfiles": true,
+    "ImageUrls": [],
+    "IconUrl": "https://raw.githubusercontent.com/NightmareXIV/DSREyeLocator/master/DSREyeLocator/images/icon.png"
   }
 ]
