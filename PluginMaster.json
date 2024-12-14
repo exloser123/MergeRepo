@@ -1,84 +1,18 @@
 [
   {
-    "Author": "53m1k0l0n/Gidedin (Puni.sh) / NiGuangOwO (本地化)",
-    "Name": "LazyLoot",
-    "Punchline": "一(自)键(动)Roll点用的 (在线安装Only)",
-    "Description": "带有各种参数的Roll点命令 need | greed | pass\n聊天和Toast输出以及Roll点延迟。",
-    "Tags": [
-      "plugin",
-      "loot",
-      "utility",
-      "other"
-    ],
-    "InternalName": "LazyLoot",
-    "RepoUrl": "https://github.com/PunishXIV/LazyLoot",
-    "AssemblyVersion": "5.3.0.3",
     "ApplicableVersion": "any",
-    "DalamudApiLevel": 10,
-    "IconUrl": "https://s3.puni.sh/media/plugin/9/icon-zjun2qgmfbe.png",
-    "DownloadLinkInstall": "https://github.com/NiGuangOwO/DalamudPlugins/raw/main/plugins/LazyLoot/latest.zip",
-    "IsHide": false,
-    "IsTestingExclusive": false,
-    "DownloadLinkUpdate": "https://github.com/NiGuangOwO/DalamudPlugins/raw/main/plugins/LazyLoot/latest.zip",
-    "DownloadCount": 0,
-    "LastUpdate": "1733838796"
-  },
-  {
-    "Author": "Taurenkey (Puni.sh)",
-    "Name": "Artisan",
-    "Punchline": "一个“简单”的生产插件。",
-    "Description": "一站式生产插件。非常适合对生产循环几乎没有知识的人。不需要在宏之间切换，求解器会根据实际情况动态工作。此外，还提供方便的方式来依生产清单进行制作或反复制作指定物品。",
-    "Changelog": "",
-    "Tags": [
-      "crafting"
-    ],
-    "InternalName": "Artisan",
-    "AssemblyVersion": "4.0.1.801",
-    "TestingAssemblyVersion": "4.0.1.801",
-    "RepoUrl": "https://github.com/PunishXIV/Artisan",
-    "ApplicableVersion": "any",
-    "DalamudApiLevel": 10,
-    "DownloadLinkInstall": "https://meowrs.com/https://github.com/MeowZWR/DalamudPlugin/raw/main/Plugins/Artisan/4.0.1.801/latest.zip",
-    "DownloadLinkUpdate": "https://meowrs.com/https://github.com/MeowZWR/DalamudPlugin/raw/main/Plugins/Artisan/4.0.1.801/latest.zip",
-    "DownloadLinkTesting": "https://meowrs.com/https://github.com/MeowZWR/DalamudPlugin/raw/main/Plugins/Artisan/4.0.1.801/latest.zip",
-    "IconUrl": "https://meowrs.com/https://raw.githubusercontent.com/MeowZWR/DalamudPlugin/main/Plugins/Artisan/icon.png"
-  },
-  {
-    "Author": "NightmareXIV / NiGuangOwO（汉化&适配）",
-    "Name": "Lifestream",
-    "Punchline": "一个加速以太网旅行和跨服的插件。",
-    "Description": "- 一键传送到任何服务器或以太网目的地\n- 单击区域地图内的以太水晶以传送到它们",
-    "InternalName": "Lifestream",
-    "RepoUrl": "https://github.com/NightmareXIV/Lifestream",
-    "AssemblyVersion": "2.3.1.0",
-    "ApplicableVersion": "any",
-    "DalamudApiLevel": 10,
-    "IconUrl": "https://raw.githubusercontent.com/NightmareXIV/MyDalamudPlugins/main/icons/lifestream.png",
-    "DownloadLinkInstall": "https://github.com/NiGuangOwO/DalamudPlugins/raw/main/plugins/Lifestream/latest.zip",
-    "IsHide": false,
-    "IsTestingExclusive": false,
-    "DownloadLinkUpdate": "https://github.com/NiGuangOwO/DalamudPlugins/raw/main/plugins/Lifestream/latest.zip",
-    "DownloadCount": 0,
-    "LastUpdate": "1733838796"
-  },
-  {
-    "Author": "kawaii, NightmareXIV",
-    "Name": "Avarice",
-    "Punchline": "Positional feedback with pixel perfect rear/flank tracking, range indicators, and more.",
-    "Description": "Positional feedback with pixel perfect rear/flank tracking, range indicators, and more.",
-    "Tags": [
-      "combat"
-    ],
-    "InternalName": "Avarice",
-    "RepoUrl": "https://github.com/PunishXIV/Avarice",
-    "DownloadCount": 142682,
-    "LastUpdate": 1733458789370,
-    "DownloadLinkInstall": "https://puni.sh/api/plugins/download/11/Avarice/versions/latest.zip",
-    "DownloadLinkUpdate": "https://puni.sh/api/plugins/download/11/Avarice/versions/latest.zip",
-    "AssemblyVersion": "2.1.0.8",
-    "ApplicableVersion": "any",
+    "AssemblyVersion": "1.9.0",
+    "Author": "daemitus, kawaii",
     "DalamudApiLevel": "11",
-    "Changelog": "",
-    "IconUrl": "https://s3.puni.sh/media/plugin/11/icon-d95r9462spc.png"
+    "Description": "Tired of clicking yes in Praetorium? Can't stand using keys in dungeons? Well do I have the plugin for you! Yes Already is specifically designed to click all the annoying dialogs you've grown accustomed facerolling. Just enter the dialog text, and you'll never see it again! Also works with /regex/ and has several built-in modules for dialogs that aren't quite yes/no prompts but act like it (like desynth).",
+    "DownloadCount": 510538,
+    "DownloadLinkInstall": "https://puni.sh/api/plugins/download/26/YesAlready/versions/latest.zip",
+    "DownloadLinkUpdate": "https://puni.sh/api/plugins/download/26/YesAlready/versions/latest.zip",
+    "IconUrl": "https://s3.puni.sh/media/plugin/26/icon-v1pvonkr6r.png",
+    "InternalName": "YesAlready",
+    "Name": "Yes Already",
+    "Punchline": "Clicks Yes in various dialogs you've specified.",
+    "RepoUrl": "https://github.com/PunishXIV/YesAlready",
+    "Tags": []
   }
 ]
