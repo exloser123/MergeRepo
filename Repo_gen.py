@@ -67,19 +67,17 @@ def filter_list(event):
         list_My_Repo.insert(tk.END, _item["Name"])
 
 def ADD_TO_LIST(event):
-    if current_select in filter_my_repo_list:
+    if current_select in my_Repo_list:
         return
+    my_Repo_list.append(current_select)
     filter_my_repo_list.append(current_select)
-    global my_Repo_list
-    my_Repo_list = filter_my_repo_list
     list_My_Repo.delete(0, tk.END)
     for _item in filter_my_repo_list:
         list_My_Repo.insert(tk.END, _item["Name"])
 
 def DELETE_FROM_LIST(event):
+    my_Repo_list.remove(current_select)
     filter_my_repo_list.remove(current_select)
-    global my_Repo_list
-    my_Repo_list = filter_my_repo_list
     list_My_Repo.delete(0, tk.END)
     for _item in filter_my_repo_list:
         list_My_Repo.insert(tk.END, _item["Name"])
