@@ -96,12 +96,12 @@ def UPDATE_REPO():
                     UPDATE_COUNT += 1
                     UPDATE_LIST.append(_item["Name"])
     with open(my_Repo_fp, 'w') as _file:
-        json.dump(filter_my_repo_list, _file,indent=2)
+        json.dump(filter_my_repo_list, _file,indent=2,ensure_ascii=False)
     _temp_list = []
     for _item in filter_my_repo_list:
         _temp_list.append(_item["Dict"])
     with open(git_Repo_fp, 'w') as _file:
-        json.dump(_temp_list, _file,indent=2)
+        json.dump(_temp_list, _file,indent=2,ensure_ascii=False)
     os.system("git commit --all -m 'update'")
     os.system("git push origin master")
     messagebox.showinfo("上传", f"更新完成，共更新{UPDATE_COUNT}个插件，更新列表：\n{UPDATE_LIST}")
@@ -111,7 +111,7 @@ git_Repo_fp = "PluginMaster.json"
 # 如果文件不存在，则创建
 if not os.path.exists(my_Repo_fp):
     with open(my_Repo_fp, 'w') as file:
-        json.dump([], file,indent=2)
+        json.dump([], file,indent=2,ensure_ascii=False)
 else:
     with open(my_Repo_fp, 'r') as file:
         my_Repo_list = json.load(file)

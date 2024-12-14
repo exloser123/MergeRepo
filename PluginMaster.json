@@ -1,9 +1,9 @@
 [
   {
-    "Author": "53m1k0l0n/Gidedin (Puni.sh) / NiGuangOwO (\u672c\u5730\u5316)",
+    "Author": "53m1k0l0n/Gidedin (Puni.sh) / NiGuangOwO (本地化)",
     "Name": "LazyLoot",
-    "Punchline": "\u4e00(\u81ea)\u952e(\u52a8)Roll\u70b9\u7528\u7684 (\u5728\u7ebf\u5b89\u88c5Only)",
-    "Description": "\u5e26\u6709\u5404\u79cd\u53c2\u6570\u7684Roll\u70b9\u547d\u4ee4 need | greed | pass\n\u804a\u5929\u548cToast\u8f93\u51fa\u4ee5\u53caRoll\u70b9\u5ef6\u8fdf\u3002",
+    "Punchline": "一(自)键(动)Roll点用的 (在线安装Only)",
+    "Description": "带有各种参数的Roll点命令 need | greed | pass\n聊天和Toast输出以及Roll点延迟。",
     "Tags": [
       "plugin",
       "loot",
@@ -26,8 +26,8 @@
   {
     "Author": "Taurenkey (Puni.sh)",
     "Name": "Artisan",
-    "Punchline": "\u4e00\u4e2a\u201c\u7b80\u5355\u201d\u7684\u751f\u4ea7\u63d2\u4ef6\u3002",
-    "Description": "\u4e00\u7ad9\u5f0f\u751f\u4ea7\u63d2\u4ef6\u3002\u975e\u5e38\u9002\u5408\u5bf9\u751f\u4ea7\u5faa\u73af\u51e0\u4e4e\u6ca1\u6709\u77e5\u8bc6\u7684\u4eba\u3002\u4e0d\u9700\u8981\u5728\u5b8f\u4e4b\u95f4\u5207\u6362\uff0c\u6c42\u89e3\u5668\u4f1a\u6839\u636e\u5b9e\u9645\u60c5\u51b5\u52a8\u6001\u5de5\u4f5c\u3002\u6b64\u5916\uff0c\u8fd8\u63d0\u4f9b\u65b9\u4fbf\u7684\u65b9\u5f0f\u6765\u4f9d\u751f\u4ea7\u6e05\u5355\u8fdb\u884c\u5236\u4f5c\u6216\u53cd\u590d\u5236\u4f5c\u6307\u5b9a\u7269\u54c1\u3002",
+    "Punchline": "一个“简单”的生产插件。",
+    "Description": "一站式生产插件。非常适合对生产循环几乎没有知识的人。不需要在宏之间切换，求解器会根据实际情况动态工作。此外，还提供方便的方式来依生产清单进行制作或反复制作指定物品。",
     "Changelog": "",
     "Tags": [
       "crafting"
@@ -44,10 +44,10 @@
     "IconUrl": "https://meowrs.com/https://raw.githubusercontent.com/MeowZWR/DalamudPlugin/main/Plugins/Artisan/icon.png"
   },
   {
-    "Author": "NightmareXIV / NiGuangOwO\uff08\u6c49\u5316&\u9002\u914d\uff09",
+    "Author": "NightmareXIV / NiGuangOwO（汉化&适配）",
     "Name": "Lifestream",
-    "Punchline": "\u4e00\u4e2a\u52a0\u901f\u4ee5\u592a\u7f51\u65c5\u884c\u548c\u8de8\u670d\u7684\u63d2\u4ef6\u3002",
-    "Description": "- \u4e00\u952e\u4f20\u9001\u5230\u4efb\u4f55\u670d\u52a1\u5668\u6216\u4ee5\u592a\u7f51\u76ee\u7684\u5730\n- \u5355\u51fb\u533a\u57df\u5730\u56fe\u5185\u7684\u4ee5\u592a\u6c34\u6676\u4ee5\u4f20\u9001\u5230\u5b83\u4eec",
+    "Punchline": "一个加速以太网旅行和跨服的插件。",
+    "Description": "- 一键传送到任何服务器或以太网目的地\n- 单击区域地图内的以太水晶以传送到它们",
     "InternalName": "Lifestream",
     "RepoUrl": "https://github.com/NightmareXIV/Lifestream",
     "AssemblyVersion": "2.3.1.0",
@@ -60,5 +60,25 @@
     "DownloadLinkUpdate": "https://github.com/NiGuangOwO/DalamudPlugins/raw/main/plugins/Lifestream/latest.zip",
     "DownloadCount": 0,
     "LastUpdate": "1733838796"
+  },
+  {
+    "Author": "kawaii, NightmareXIV",
+    "Name": "Avarice",
+    "Punchline": "Positional feedback with pixel perfect rear/flank tracking, range indicators, and more.",
+    "Description": "Positional feedback with pixel perfect rear/flank tracking, range indicators, and more.",
+    "Tags": [
+      "combat"
+    ],
+    "InternalName": "Avarice",
+    "RepoUrl": "https://github.com/PunishXIV/Avarice",
+    "DownloadCount": 142682,
+    "LastUpdate": 1733458789370,
+    "DownloadLinkInstall": "https://puni.sh/api/plugins/download/11/Avarice/versions/latest.zip",
+    "DownloadLinkUpdate": "https://puni.sh/api/plugins/download/11/Avarice/versions/latest.zip",
+    "AssemblyVersion": "2.1.0.8",
+    "ApplicableVersion": "any",
+    "DalamudApiLevel": "11",
+    "Changelog": "",
+    "IconUrl": "https://s3.puni.sh/media/plugin/11/icon-d95r9462spc.png"
   }
 ]
