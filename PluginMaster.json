@@ -19,5 +19,101 @@
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/44451516/XIVSlothCombo/CN/release/XIVSlothComboX/latest.zip",
         "DownloadCount": 0,
         "LastUpdated": "1724608643"
+    },
+    {
+        "Author": "Det",
+        "Name": "AutoHook (CN)",
+        "Punchline": "Makes fishing less (or more) boring",
+        "Description": "Temporary API 10 version until patch 7.1",
+        "Tags": [
+            "Gathering",
+            "Fishing"
+        ],
+        "InternalName": "AutoHook",
+        "RepoUrl": "https://github.com/PunishXIV/AutoHook",
+        "DownloadCount": 552,
+        "LastUpdate": 1731863584244,
+        "DownloadLinkInstall": "https://puni.sh/api/plugins/download/57/AutoHook/versions/latest.zip",
+        "DownloadLinkUpdate": "https://puni.sh/api/plugins/download/57/AutoHook/versions/latest.zip",
+        "AssemblyVersion": "4.3.0.13",
+        "ApplicableVersion": "any",
+        "DalamudApiLevel": "10",
+        "Changelog": "CN AP10 Rollback"
+    },
+    {
+        "Author": "Asgard, Minmoose and Contributors",
+        "Name": "Brio",
+        "Punchline": "增强集体动作体验。",
+        "Description": "在集体动作模式中控制参与的角色。",
+        "InternalName": "Brio",
+        "AssemblyVersion": "0.4.2",
+        "TestingAssemblyVersion": "0.4.2",
+        "RepoUrl": "https://github.com/MeowZWR/Brio",
+        "ApplicableVersion": "any",
+        "DalamudApiLevel": 10,
+        "DownloadLinkInstall": "https://github.com/MeowZWR/Brio/releases/download/cn0.4.2/Brio.zip",
+        "DownloadLinkTesting": "https://github.com/MeowZWR/Brio/releases/download/cn0.4.2/Brio.zip",
+        "DownloadLinkUpdate": "https://github.com/MeowZWR/Brio/releases/download/cn0.4.2/Brio.zip",
+        "IconUrl": "https://raw.githubusercontent.com/MeowZWR/Brio/main/Resources/Images/BrioIcon.png",
+        "Tags": [
+            "gpose",
+            "brio",
+            "posing",
+            "animation",
+            "Sea Of Stars"
+        ]
+    },
+    {
+        "Author": "LeonBlade",
+        "Name": "Burning Down the House",
+        "Description": "根据坐标移动装修物品，解除游戏限制。",
+        "InternalName": "BDTHPlugin",
+        "AssemblyVersion": "1.6.6",
+        "RepoUrl": "https://github.com/LeonBlade/BDTHPlugin",
+        "ApplicableVersion": "any",
+        "Tags": [
+            "bdth",
+            "housing",
+            "float",
+            "place",
+            "glitch",
+            "furnishing",
+            "LeonBlade"
+        ],
+        "DalamudApiLevel": 10,
+        "IsHide": "False",
+        "IsTestingExclusive": "False",
+        "DownloadLinkInstall": "https://raw.githubusercontent.com/MeowZWR/DalamudPlugin/global/Plugins/BDTHPlugin/1.6.6/latest.zip",
+        "DownloadLinkTesting": "https://raw.githubusercontent.com/MeowZWR/DalamudPlugin/global/Plugins/BDTHPlugin/1.6.6/latest.zip",
+        "DownloadLinkUpdate": "https://raw.githubusercontent.com/MeowZWR/DalamudPlugin/global/Plugins/BDTHPlugin/1.6.6/latest.zip",
+        "IconUrl": "https://raw.githubusercontent.com/MeowZWR/DalamudPlugin/global/Plugins/BDTHPlugin/icon.png",
+        "Changelog": ""
+    },
+    {
+        "Author": "Aireil, Nuko",
+        "Name": "FF Logs Viewer (CN)",
+        "Punchline": "View FF Logs ranking percentiles in-game.",
+        "Description": "View FF Logs ranking percentiles in-game. Add a context menu to open someone's logs. Layout, style, stats, default metric, and more are all customizable in the settings.",
+        "Changelog": "-2.1.7.7\n   Fix broken stat layout in party view\n-2.1.7.5\n   Update extremes names\n   Fix context menu not working in blacklist and mute list",
+        "InternalName": "FFLogsViewer",
+        "AssemblyVersion": "2.1.7.7",
+        "RepoUrl": "https://github.com/NukoOoOoOoO/FFLogsViewer",
+        "ApplicableVersion": "any",
+        "Tags": [
+            "FFLogs"
+        ],
+        "DalamudApiLevel": 10,
+        "IconUrl": "https://github.com/NukoOoOoOoO/FFLogsViewer/raw/master/res/icon.png",
+        "ImageUrls": [
+            "https://github.com/Aireil/FFLogsViewer/raw/master/res/image1.png",
+            "https://github.com/Aireil/FFLogsViewer/raw/master/res/image2.png"
+        ],
+        "DownloadLinkInstall": "https://github.com/Nukoooo/DalamudPlugins/raw/dev/plugins/FFLogsViewer/latest.zip",
+        "IsHide": false,
+        "IsTestingExclusive": false,
+        "DownloadLinkTesting": "https://github.com/Nukoooo/DalamudPlugins/raw/dev/plugins/FFLogsViewer/latest.zip",
+        "DownloadLinkUpdate": "https://github.com/Nukoooo/DalamudPlugins/raw/dev/plugins/FFLogsViewer/latest.zip",
+        "DownloadCount": 0,
+        "LastUpdate": "1733282728"
     }
 ]
