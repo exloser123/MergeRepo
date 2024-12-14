@@ -1,5 +1,5 @@
 https://raw.githubusercontent.com/NightmareXIV/MyDalamudPlugins/main/pluginmaster.json
-https://raw.githubusercontent.com/yomishino/MyDalamudPlugins/main/plugins.json
+## https://raw.githubusercontent.com/yomishino/MyDalamudPlugins/main/plugins.json
 https://love.puni.sh/ment.json
 https://raw.githubusercontent.com/44451516/ffxiv_bossmod/CN/pluginmaster.json
 https://raw.githubusercontent.com/UnknownX7/DalamudPluginRepo/master/pluginmaster.json
@@ -20,5 +20,5 @@ https://raw.githubusercontent.com/ryonive/Dalamud-Darkness-Repo/main/ffxiv_custo
 https://plogon.camora.dev/unofficial
 https://puni.sh/api/repository/det
 https://raw.githubusercontent.com/MisaUo/DalamudPlugins/main/pluginmaster.json
-https://plugins.carvel.li/
+## https://plugins.carvel.li/
 https://raw.githubusercontent.com/Karlin-Z/DalamudPlugins/refs/heads/main/pluginmaster.json
