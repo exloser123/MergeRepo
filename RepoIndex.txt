@@ -4,7 +4,7 @@ https://love.puni.sh/ment.json
 https://raw.githubusercontent.com/44451516/ffxiv_bossmod/CN/pluginmaster.json
 https://raw.githubusercontent.com/UnknownX7/DalamudPluginRepo/master/pluginmaster.json
 https://raw.githubusercontent.com/Nukoooo/DalamudPlugins/dev/pluginmaster.json
-https://raw.githubusercontent.com/NiGuangOwO/DalamudPlugins/main/pluginmaster.json
+## https://raw.githubusercontent.com/NiGuangOwO/DalamudPlugins/main/pluginmaster.json
 https://gist.githubusercontent.com/CaiClone/0aad66569dbf63a9bbeec6a8e95a123f/raw/pluginmaster.json
 https://raw.githubusercontent.com/paissaheavyindustries/Dalamud-Repo/main/repo.json
 https://raw.githubusercontent.com/44451516/XIVSlothCombo/CN/release/pluginmaster.json
