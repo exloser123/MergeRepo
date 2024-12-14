@@ -82,6 +82,17 @@ def DELETE_FROM_LIST(event):
 
 def UPDATE_REPO():
     global filter_my_repo_list
+    UPDATE_COUNT = 0
+    UPDATE_LIST = []
+    for _item in filter_plugin_list:
+        for _item_my in filter_my_repo_list:
+            if _item["Name"] == _item_my["Name"] and _item["URL"] == _item_my["URL"]:
+                if _item == _item_my:
+                    continue
+                else:
+                    _item_my["Dict"] = _item["Dict"]
+                    UPDATE_COUNT += 1
+                    UPDATE_LIST.append(_item["Name"])
     with open(my_Repo_fp, 'w') as _file:
         json.dump(filter_my_repo_list, _file,indent=2)
     _temp_list = []
@@ -89,8 +100,9 @@ def UPDATE_REPO():
         _temp_list.append(_item["Dict"])
     with open(git_Repo_fp, 'w') as _file:
         json.dump(_temp_list, _file,indent=2)
-
-    messagebox.showinfo("上传","上传成功")
+    os.system("git commit --all -m 'update'")
+    os.system("git push origin master")
+    messagebox.showinfo("上传", f"更新完成，共更新{UPDATE_COUNT}个插件，更新列表：\n{UPDATE_LIST}")
 
 my_Repo_fp = "MyRepo.json"
 git_Repo_fp = "PluginMaster.json"
