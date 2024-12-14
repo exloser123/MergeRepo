@@ -12,5 +12,51 @@
         "IconUrl": "https://raw.githubusercontent.com/AtmoOmen/ffxiv_navmesh-cn/master/icon2.png",
         "DownloadLinkInstall": "https://github.com/AtmoOmen/ffxiv_navmesh-cn/releases/download/0.0.6.0/latest.zip",
         "DownloadLinkUpdate": "https://github.com/AtmoOmen/ffxiv_navmesh-cn/releases/download/0.0.6.0/latest.zip"
+    },
+    {
+        "Author": "Team Sloth",
+        "Name": "XIVSlothComboX",
+        "Punchline": "Condenses combos and mutually exclusive abilities onto a single button - and then some.",
+        "Description": "Condenses combos and mutually exclusive abilities onto a single button - and then some.",
+        "InternalName": "XIVSlothComboX",
+        "AssemblyVersion": "3.2.0.61",
+        "Changelog": "更新内容看更新日志",
+        "RepoUrl": "https://github.com/44451516/XIVSlothCombo/",
+        "ApplicableVersion": "any",
+        "DalamudApiLevel": 10,
+        "LoadPriority": 0,
+        "IconUrl": "https://raw.githubusercontent.com/44451516/XIVSlothCombo/main/res/plugin/xivslothcombo.png",
+        "DownloadLinkInstall": "https://raw.githubusercontent.com/44451516/XIVSlothCombo/CN/release/XIVSlothComboX/latest.zip",
+        "IsHide": false,
+        "IsTestingExclusive": false,
+        "DownloadLinkTesting": "https://raw.githubusercontent.com/44451516/XIVSlothCombo/CN/release/XIVSlothComboX/latest.zip",
+        "DownloadLinkUpdate": "https://raw.githubusercontent.com/44451516/XIVSlothCombo/CN/release/XIVSlothComboX/latest.zip",
+        "DownloadCount": 0,
+        "LastUpdated": "1724608643"
+    },
+    {
+        "Name": "Daily Routines",
+        "InternalName": "DailyRoutines",
+        "AssemblyVersion": "1.2.9.0",
+        "TestingAssemblyVersion": "1.2.8.3",
+        "Author": "AtmoOmen",
+        "Punchline": "帮忙解决一些日常重复性劳动 / Help with some of the daily repetitive tasks",
+        "Description": "轻量化、低性能消耗、简单的自动化功能/易用性改动合集, 帮你从一些无意义的重复性工作中解放出来\nA collection of lightweight, simple automation features/easy-to-use modules to free you from meaningless repetitive tasks.",
+        "ApplicableVersion": "any",
+        "LoadPriority": 10000,
+        "Tags": [
+            "Daily",
+            "Auto",
+            "日常",
+            "自动"
+        ],
+        "DalamudApiLevel": 10,
+        "TestingDalamudApiLevel": 10,
+        "AcceptsFeedback": true,
+        "RepoUrl": "https://github.com/AtmoOmen/DalamudPlugins",
+        "IconUrl": "https://raw.githubusercontent.com/AtmoOmen/StaticAssets/main/DailyRoutines/image/icon.png",
+        "DownloadLinkInstall": "https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/Plugins/DailyRoutines/latest.zip",
+        "DownloadLinkTesting": "https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/Plugins/DailyRoutines/latest_test.zip",
+        "DownloadLinkUpdate": "https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/Plugins/DailyRoutines/latest.zip"
     }
 ]
