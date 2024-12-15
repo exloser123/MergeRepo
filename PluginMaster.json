@@ -31,7 +31,7 @@
         ],
         "InternalName": "AutoHook",
         "RepoUrl": "https://github.com/PunishXIV/AutoHook",
-        "DownloadCount": 553,
+        "DownloadCount": 568,
         "LastUpdate": 1731863584244,
         "DownloadLinkInstall": "https://puni.sh/api/plugins/download/57/AutoHook/versions/latest.zip",
         "DownloadLinkUpdate": "https://puni.sh/api/plugins/download/57/AutoHook/versions/latest.zip",
@@ -135,5 +135,28 @@
         "DownloadLinkUpdate": "https://meowrs.com/https://github.com/MeowZWR/DalamudPlugin/raw/main/Plugins/Artisan/4.0.1.801/latest.zip",
         "DownloadLinkTesting": "https://meowrs.com/https://github.com/MeowZWR/DalamudPlugin/raw/main/Plugins/Artisan/4.0.1.801/latest.zip",
         "IconUrl": "https://meowrs.com/https://raw.githubusercontent.com/MeowZWR/DalamudPlugin/main/Plugins/Artisan/icon.png"
+    },
+    {
+        "Author": "NightmareXIV",
+        "Name": "SelectString",
+        "Punchline": "Select items in menus via 0-9 keys rather than mouse.",
+        "Description": "Numpad is also supported. Note: some menus, like World Visit, are not supported, and whether they will be in future or not remains a question.",
+        "Changelog": "- 7.1 update",
+        "IsHide": false,
+        "InternalName": "SelectString",
+        "AssemblyVersion": "1.0.1.1",
+        "TestingAssemblyVersion": "1.0.1.0",
+        "IsTestingExclusive": false,
+        "RepoUrl": "https://github.com/NightmareXIV/SelectString",
+        "ApplicableVersion": "any",
+        "DalamudApiLevel": 11,
+        "TestingDalamudApiLevel": 10,
+        "DownloadCount": 4545,
+        "LastUpdate": 1731910975,
+        "DownloadLinkInstall": "https://github.com/NightmareXIV/SelectString/releases/download/1.0.1.1/latest.zip",
+        "DownloadLinkUpdate": "https://github.com/NightmareXIV/SelectString/releases/download/1.0.1.1/latest.zip",
+        "DownloadLinkTesting": "https://github.com/NightmareXIV/SelectString/releases/download/1.0.1.0/latest.zip",
+        "SupportsProfiles": true,
+        "IconUrl": "https://raw.githubusercontent.com/NightmareXIV/SelectString/master/SelectString/images/icon.png"
     }
 ]
