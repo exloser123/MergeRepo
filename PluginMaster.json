@@ -160,23 +160,30 @@
         "IconUrl": "https://raw.githubusercontent.com/NightmareXIV/SelectString/master/SelectString/images/icon.png"
     },
     {
-        "ApplicableVersion": "any",
-        "AssemblyVersion": "1.4.1.1",
-        "Author": "daemitus",
-        "DalamudApiLevel": 9,
-        "Description": "A hard-working peon that crafts what you tell him to. An all-in-one sythesizing solution.",
-        "DownloadCount": 0,
-        "DownloadLinkInstall": "https://github.com/Xpahtalo/plugins/raw/master/plugins/SomethingNeedDoing/latest.zip",
-        "DownloadLinkTesting": "https://github.com/Xpahtalo/plugins/raw/master/plugins/SomethingNeedDoing/latest.zip",
-        "DownloadLinkUpdate": "https://github.com/Xpahtalo/plugins/raw/master/plugins/SomethingNeedDoing/latest.zip",
-        "IconUrl": "https://github.com/Xpahtalo/SomethingNeedDoing/raw/master/res/icon.png",
-        "ImageUrls": [],
+        "Author": "Asriel & daemitus",
+        "Name": "Something Need Doing [Grinch API 10]",
         "InternalName": "SomethingNeedDoing",
+        "AssemblyVersion": "1.5.1.0",
+        "Description": "A hard-working peon that crafts what you tell him to. An all-in-one sythesizing solution.",
+        "ApplicableVersion": "any",
+        "RepoUrl": "https://github.com/WorkingRobot/SomethingNeedDoing",
+        "DalamudApiLevel": 10,
+        "LoadRequiredState": 0,
+        "LoadSync": false,
+        "CanUnloadAsync": false,
+        "LoadPriority": 0,
+        "ImageUrls": [
+            "https://raw.githubusercontent.com/WorkingRobot/SomethingNeedDoing/main/res/game.png"
+        ],
+        "IconUrl": "https://raw.githubusercontent.com/WorkingRobot/MyDalamudPlugins/main/icons/SomethingNeedDoing.png",
+        "Punchline": "Work work.",
+        "AcceptsFeedback": true,
         "IsHide": false,
         "IsTestingExclusive": false,
-        "LoadPriority": 0,
-        "Name": "Something Need Doing",
-        "Punchline": "Work work.",
-        "RepoUrl": "https://github.com/Xpahtalo/SomethingNeedDoing"
+        "LastUpdate": 1720021607,
+        "DownloadCount": 5756,
+        "DownloadLinkInstall": "https://github.com/WorkingRobot/SomethingNeedDoing/releases/download/1.5.1.0/latest.zip",
+        "DownloadLinkUpdate": "https://github.com/WorkingRobot/SomethingNeedDoing/releases/download/1.5.1.0/latest.zip",
+        "DownloadLinkTesting": "https://github.com/WorkingRobot/SomethingNeedDoing/releases/download/1.5.1.0/latest.zip"
     }
 ]
