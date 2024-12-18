@@ -31,7 +31,7 @@
         ],
         "InternalName": "AutoHook",
         "RepoUrl": "https://github.com/PunishXIV/AutoHook",
-        "DownloadCount": 568,
+        "DownloadCount": 583,
         "LastUpdate": 1731863584244,
         "DownloadLinkInstall": "https://puni.sh/api/plugins/download/57/AutoHook/versions/latest.zip",
         "DownloadLinkUpdate": "https://puni.sh/api/plugins/download/57/AutoHook/versions/latest.zip",
@@ -158,5 +158,25 @@
         "DownloadLinkTesting": "https://github.com/NightmareXIV/SelectString/releases/download/1.0.1.0/latest.zip",
         "SupportsProfiles": true,
         "IconUrl": "https://raw.githubusercontent.com/NightmareXIV/SelectString/master/SelectString/images/icon.png"
+    },
+    {
+        "ApplicableVersion": "any",
+        "AssemblyVersion": "1.4.1.1",
+        "Author": "daemitus",
+        "DalamudApiLevel": 9,
+        "Description": "A hard-working peon that crafts what you tell him to. An all-in-one sythesizing solution.",
+        "DownloadCount": 0,
+        "DownloadLinkInstall": "https://github.com/Xpahtalo/plugins/raw/master/plugins/SomethingNeedDoing/latest.zip",
+        "DownloadLinkTesting": "https://github.com/Xpahtalo/plugins/raw/master/plugins/SomethingNeedDoing/latest.zip",
+        "DownloadLinkUpdate": "https://github.com/Xpahtalo/plugins/raw/master/plugins/SomethingNeedDoing/latest.zip",
+        "IconUrl": "https://github.com/Xpahtalo/SomethingNeedDoing/raw/master/res/icon.png",
+        "ImageUrls": [],
+        "InternalName": "SomethingNeedDoing",
+        "IsHide": false,
+        "IsTestingExclusive": false,
+        "LoadPriority": 0,
+        "Name": "Something Need Doing",
+        "Punchline": "Work work.",
+        "RepoUrl": "https://github.com/Xpahtalo/SomethingNeedDoing"
     }
 ]
