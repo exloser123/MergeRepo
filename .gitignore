@@ -1,0 +1,7 @@
+# 忽略 .env 文件
+.idea
+/.idea
+/.venv
+.venv
+/.icon_cache
+__pycache__

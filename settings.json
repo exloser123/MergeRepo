@@ -1,0 +1,12 @@
+{
+    "proxy": {
+        "https": "127.0.0.1:7897"
+    },
+    "repo_index_fp": "RepoIndex.txt",
+    "cache_plugin_fp": "cache_plugin.json",
+    "cache_plugin_time": "2025-07-27 22:32:59",
+    "my_plugin_fp": "MyRepo.json",
+    "my_plugin_time": "2025-07-27 23:02:56",
+    "git_plugin_fp": "PluginMaster.json",
+    "git_plugin_time": "2023-01-01 00:00:00"
+}
