@@ -1,6 +1,28 @@
 [
     {
         "ApplicableVersion": "any",
+        "AssemblyVersion": "1.0.8.0",
+        "Author": "NightmareXIV, AsunaTsuki",
+        "Changelog": "- Updated to support pathes in newest Glamourer\r\n- New feature: rule folders\r\n- - Visually organize your rules into few groups\r\n- - Everything still applies top to bottom\r\n- - Your existing rules were automatically moved into \"Main rules\" folder that can not be deleted or renamed\r\n- - Folder can be disabled and it's rules will be ignored until you switch it back to enabled state\r\n- If you're fishing, DB will wait for fishing to be completed before changing preset\r\n- Fixed an issue where exported folder could not be imported\r\n- Default folder can now be exported as well\r\n",
+        "DalamudApiLevel": 12,
+        "Description": "Automates character appearance changes through rule-based presets, utilizing integration with other popular customization plugins. This enables seamless and context-sensitive transformations, enriching gameplay and increasing immersion.",
+        "DownloadCount": 86736,
+        "DownloadLinkInstall": "https://github.com/NightmareXIV/DynamicBridge/releases/download/1.0.8.0/latest.zip",
+        "DownloadLinkTesting": "https://github.com/NightmareXIV/DynamicBridge/releases/download/1.0.7.4/latest.zip",
+        "DownloadLinkUpdate": "https://github.com/NightmareXIV/DynamicBridge/releases/download/1.0.8.0/latest.zip",
+        "IconUrl": "https://raw.githubusercontent.com/NightmareXIV/DynamicBridge/main/DynamicBridge/images/icon.png",
+        "InternalName": "DynamicBridge",
+        "IsHide": false,
+        "IsTestingExclusive": false,
+        "LastUpdate": 1749876830,
+        "Name": "DynamicBridge",
+        "Punchline": "Allows you to automatically change your appearance based on various conditions.",
+        "SupportsProfiles": true,
+        "TestingAssemblyVersion": "1.0.7.4",
+        "TestingDalamudApiLevel": 11
+    },
+    {
+        "ApplicableVersion": "any",
         "AssemblyVersion": "1.0.2.4",
         "Author": "NightmareXIV",
         "Changelog": "- Added an option to mount up after teleporting",
@@ -10,7 +32,6 @@
         "DownloadLinkInstall": "https://github.com/NightmareXIV/HuntTrainAssistant/releases/download/1.0.2.4/latest.zip",
         "DownloadLinkTesting": "https://github.com/NightmareXIV/HuntTrainAssistant/releases/download/1.0.2.6/latest.zip",
         "DownloadLinkUpdate": "https://github.com/NightmareXIV/HuntTrainAssistant/releases/download/1.0.2.4/latest.zip",
-        "Hash": "9087c2fc9f4b86016cda6cd6c469090c",
         "IconUrl": "https://raw.githubusercontent.com/NightmareXIV/HuntTrainAssistant/master/HuntTrainAssistant/images/icon.png",
         "InternalName": "HuntTrainAssistant",
         "IsHide": false,
@@ -21,9 +42,7 @@
         "RepoUrl": "https://github.com/NightmareXIV/HuntTrainAssistant",
         "SupportsProfiles": true,
         "TestingAssemblyVersion": "1.0.2.6",
-        "TestingDalamudApiLevel": 12,
-        "URL": "https://raw.githubusercontent.com/NightmareXIV/MyDalamudPlugins/main/pluginmaster.json",
-        "is_favorite": true
+        "TestingDalamudApiLevel": 12
     },
     {
         "ApplicableVersion": "any",
@@ -36,7 +55,6 @@
         "DownloadLinkInstall": "https://github.com/NightmareXIV/Lifestream/releases/download/2.5.1.15/latest.zip",
         "DownloadLinkTesting": "https://github.com/NightmareXIV/Lifestream/releases/download/2.5.1.12/latest.zip",
         "DownloadLinkUpdate": "https://github.com/NightmareXIV/Lifestream/releases/download/2.5.1.15/latest.zip",
-        "Hash": "e8e31e30cb0701f4dd6f16d0778485a9",
         "IconUrl": "https://raw.githubusercontent.com/NightmareXIV/Lifestream/main/Lifestream/images/icon.png",
         "InternalName": "Lifestream",
         "IsHide": false,
@@ -47,9 +65,7 @@
         "RepoUrl": "https://github.com/NightmareXIV/Lifestream",
         "SupportsProfiles": true,
         "TestingAssemblyVersion": "2.5.1.12",
-        "TestingDalamudApiLevel": 12,
-        "URL": "https://raw.githubusercontent.com/NightmareXIV/MyDalamudPlugins/main/pluginmaster.json",
-        "is_favorite": true
+        "TestingDalamudApiLevel": 12
     },
     {
         "ApplicableVersion": "any",
@@ -62,7 +78,6 @@
         "DownloadLinkInstall": "https://github.com/NightmareXIV/DSREyeLocator/releases/download/2.0.1.6/latest.zip",
         "DownloadLinkTesting": "https://github.com/NightmareXIV/DSREyeLocator/releases/download/2.0.1.4/latest.zip",
         "DownloadLinkUpdate": "https://github.com/NightmareXIV/DSREyeLocator/releases/download/2.0.1.6/latest.zip",
-        "Hash": "fe584f19a674eed66c6bb69ac95ec5f7",
         "IconUrl": "https://raw.githubusercontent.com/NightmareXIV/DSREyeLocator/master/DSREyeLocator/images/icon.png",
         "ImageUrls": [],
         "InternalName": "DSREyeLocator",
@@ -73,9 +88,7 @@
         "Punchline": "A helper plugin for Dragonsong's Reprise (Ultimate).",
         "SupportsProfiles": true,
         "TestingAssemblyVersion": "2.0.1.4",
-        "TestingDalamudApiLevel": 10,
-        "URL": "https://raw.githubusercontent.com/NightmareXIV/MyDalamudPlugins/main/pluginmaster.json",
-        "is_favorite": true
+        "TestingDalamudApiLevel": 10
     },
     {
         "ApplicableVersion": "any",
@@ -87,7 +100,6 @@
         "DownloadCount": 8036,
         "DownloadLinkInstall": "https://github.com/NightmareXIV/WExtras/releases/download/1.0.0.7/latest.zip",
         "DownloadLinkUpdate": "https://github.com/NightmareXIV/WExtras/releases/download/1.0.0.7/latest.zip",
-        "Hash": "7946e85504f84b78de2d490b63779f7c",
         "InternalName": "WExtras",
         "IsHide": false,
         "IsTestingExclusive": false,
@@ -95,8 +107,6 @@
         "Name": "WeathermanExtras",
         "Punchline": "Experimental Weatherman functions. ",
         "RepoUrl": "https://github.com/NightmareXIV/WExtras",
-        "SupportsProfiles": true,
-        "URL": "https://raw.githubusercontent.com/NightmareXIV/MyDalamudPlugins/main/pluginmaster.json",
-        "is_favorite": true
+        "SupportsProfiles": true
     }
 ]

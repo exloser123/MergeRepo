@@ -303,25 +303,25 @@ class Git_Updater(QThread):
         for hash_code,bool in my_repo_list.items():
             if bool:
                 for item in self.plugin_list:
-                    if "Hash" not in item:
-                        if "URL" in item:
-                            print(item["URL"])
-                        if "Name" in item:
-                            print(item["Name"])
-                        if "URL" not in item or "Name" not in item:
-                            continue
-                        # 计算Hash值
-                        combined_str = (item["URL"] + item["Name"]).encode('utf-8')
-                        plugin_hash = hashlib.md5(combined_str).hexdigest()
-                        item["Hash"] = plugin_hash
+                    # if "Hash" not in item:
+                    #     if "URL" in item:
+                    #         print(item["URL"])
+                    #     if "Name" in item:
+                    #         print(item["Name"])
+                    #     if "URL" not in item or "Name" not in item:
+                    #         continue
+                    #     # 计算Hash值
+                    #     combined_str = (item["URL"] + item["Name"]).encode('utf-8')
+                    #     plugin_hash = hashlib.md5(combined_str).hexdigest()
+                    #     item["Hash"] = plugin_hash
                     if item["Hash"] == hash_code:
                         self.update_count += 1
                         self.update_list.append(item["Name"])
                         # 假设要去除的键为 "URL", "Hash", "is_favorite"
-                        data = item
-                        # data.pop("URL", None)
-                        # data.pop("Hash", None)
-                        # data.pop("is_favorite", None)
+                        data = item.copy()
+                        data.pop("URL", None)
+                        data.pop("Hash", None)
+                        data.pop("is_favorite", None)
                         processed_list.append(data)
         return processed_list
 
