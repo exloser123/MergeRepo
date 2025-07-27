@@ -262,3 +262,4 @@ class Ui_Form(QtCore.QObject):
         :param visible: 布尔值，True 表示可见，False 表示不可见
         """
         self.widget_item.setVisible(visible)
+        self.widget_details.setVisible(visible)
