@@ -319,9 +319,9 @@ class Git_Updater(QThread):
                         self.update_list.append(item["Name"])
                         # 假设要去除的键为 "URL", "Hash", "is_favorite"
                         data = item
-                        data.pop("URL", None)
-                        data.pop("Hash", None)
-                        data.pop("is_favorite", None)
+                        # data.pop("URL", None)
+                        # data.pop("Hash", None)
+                        # data.pop("is_favorite", None)
                         processed_list.append(data)
         return processed_list
 
