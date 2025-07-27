@@ -187,6 +187,10 @@ class Ui_Form(QtCore.QObject):
         for plugin in self.plugin_list:
             # "Hash"值如果没有就生成
             if "Hash" not in plugin:
+                if "URL" in plugin:
+                    print(plugin["URL"])
+                if "Name" in plugin:
+                    print(plugin["Name"])
                 if "URL" not in plugin or "Name" not in plugin:
                     continue
                 # 计算Hash值

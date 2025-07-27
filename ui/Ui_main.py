@@ -304,6 +304,10 @@ class Git_Updater(QThread):
             if bool:
                 for item in self.plugin_list:
                     if "Hash" not in item:
+                        if "URL" in item:
+                            print(item["URL"])
+                        if "Name" in item:
+                            print(item["Name"])
                         if "URL" not in item or "Name" not in item:
                             continue
                         # 计算Hash值
