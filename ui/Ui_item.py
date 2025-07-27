@@ -1,6 +1,7 @@
 from PyQt5 import QtWidgets, QtCore, QtGui
 import json
 import os
+import hashlib
 
 # 获取当前脚本所在目录
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -184,6 +185,13 @@ class Ui_Form(QtCore.QObject):
         my_repo_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "MyRepo.json")
         settings_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "settings.json")
         for plugin in self.plugin_list:
+            # "Hash"值如果没有就生成
+            if "Hash" not in plugin:
+                if "URL" not in plugin or "Name" not in plugin:
+                    continue
+                # 计算Hash值
+                combined_str = (plugin["URL"] + plugin["Name"]).encode('utf-8')
+                plugin_hash = hashlib.md5(combined_str).hexdigest()
             if plugin["Hash"] == plugin_hash:
                 # 切换收藏状态
                 plugin["is_favorite"] = not plugin["is_favorite"]

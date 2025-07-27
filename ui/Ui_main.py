@@ -337,8 +337,8 @@ class Git_Updater(QThread):
         """
         # 执行 git 提交和推送操作
         os.system("git add .")
-        os.system("git commit -m 'update PluginMaster.json'")
-        os.system("git push origin master")
+        os.system('git commit -m "update Repo"')
+        os.system("git push")
 
 
     def run(self):
@@ -476,7 +476,7 @@ class Ui_MainWindow(QObject):  # 继承自 QObject
             default_pixmap = QtGui.QPixmap(ICON_PATH)
 
             ui = Ui_Form(plugin_list=plugin_list)
-            ui.setupUi(item_widget, name, info, default_pixmap, plugin.get("Hash"), plugin)
+            ui.setupUi(item_widget, name, info, default_pixmap, plugin["Hash"], plugin)
             self.ui_items.append((ui, icon, default_pixmap))
 
             self.scroll_layout.addWidget(item_widget)
