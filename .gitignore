@@ -1,7 +1,41 @@
 # 忽略 .env 文件
+.env
+
+# IDE 相关文件
 .idea
 /.idea
-/.venv
+
+# 虚拟环境
 .venv
+/.venv
+
+# 图标缓存
 /.icon_cache
+
+# Python 编译文件
 __pycache__
+*.pyc
+*.pyo
+
+# 日志文件
+*.log
+
+# 数据库文件
+*.db
+
+# 缓存文件
+.cache
+.cache/
+
+# 打包相关
+dist/
+build/
+*.egg-info/
+
+# 临时文件
+*.swp
+*.tmp
+
+# 测试报告
+htmlcov/
+.coverage
