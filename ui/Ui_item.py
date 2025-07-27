@@ -17,10 +17,13 @@ class Ui_Form(QtCore.QObject):
         super().__init__(parent)
         self.icon_loaded.connect(self.update_icon)
         self.plugin_list = plugin_list if plugin_list else []
+        self.Form = None
 
     def setupUi(self, Form, name, info, pixmap, plugin_hash, plugin_json=None):
         Form.setObjectName("Form")
         Form.resize(600, 80)
+
+        self.Form = Form
 
         # 创建垂直布局
         self.verticalLayout = QtWidgets.QVBoxLayout(Form)
@@ -261,5 +264,4 @@ class Ui_Form(QtCore.QObject):
 
         :param visible: 布尔值，True 表示可见，False 表示不可见
         """
-        self.widget_item.setVisible(visible)
-        self.widget_details.setVisible(visible)
+        self.Form.setVisible(visible)
