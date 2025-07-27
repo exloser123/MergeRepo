@@ -605,7 +605,8 @@ class Ui_MainWindow(QObject):  # 继承自 QObject
         """
         启动 Git 更新线程。
         """
-        self.git_updater = Git_Updater(self.plugin_list)
+        plugin_list = self.plugin_list
+        self.git_updater = Git_Updater(plugin_list)
         self.git_updater.update_finished.connect(self.on_git_update_finished)
         self.git_updater.start()
 
