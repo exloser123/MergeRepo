@@ -331,7 +331,7 @@ class Git_Updater(QThread):
         # 执行 git 提交和推送操作
         os.system("git add .")
         os.system('git commit -m "update Repo"')
-        os.system("git push")
+        os.system("git push origin main")
 
 
     def run(self):
