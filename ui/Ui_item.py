@@ -27,8 +27,7 @@ class Ui_Form(QtCore.QObject):
 
         # 创建 widget_item
         self.widget_item = QtWidgets.QWidget(Form)
-        self.original_style = "background-color: #f0f0f0;"
-        self.widget_item.setStyleSheet(self.original_style)
+        self.widget_item.setStyleSheet("background-color: #f0f0f0;")
         self.widget_item.setMinimumSize(600, 82)
 
         # 为 widget_item 安装事件过滤器
@@ -139,7 +138,7 @@ class Ui_Form(QtCore.QObject):
                 return True
             elif event.type() == QtCore.QEvent.Leave:
                 # 鼠标离开时恢复原始背景颜色
-                self.widget_item.setStyleSheet(self.original_style)
+                self.widget_item.setStyleSheet("background-color: #f0f0f0;")
                 return True
         return False
 
@@ -255,3 +254,11 @@ class Ui_Form(QtCore.QObject):
         :return: 包含所有收藏插件的列表
         """
         return [plugin for plugin in self.plugin_list if plugin.get("is_favorite", False)]
+    
+    def set_visible(self, visible):
+        """
+        设置插件项的可见性。
+
+        :param visible: 布尔值，True 表示可见，False 表示不可见
+        """
+        self.widget_item.setVisible(visible)

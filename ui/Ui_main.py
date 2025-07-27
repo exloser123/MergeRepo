@@ -303,17 +303,6 @@ class Git_Updater(QThread):
         for hash_code,bool in my_repo_list.items():
             if bool:
                 for item in self.plugin_list:
-                    # if "Hash" not in item:
-                    #     if "URL" in item:
-                    #         print(item["URL"])
-                    #     if "Name" in item:
-                    #         print(item["Name"])
-                    #     if "URL" not in item or "Name" not in item:
-                    #         continue
-                    #     # 计算Hash值
-                    #     combined_str = (item["URL"] + item["Name"]).encode('utf-8')
-                    #     plugin_hash = hashlib.md5(combined_str).hexdigest()
-                    #     item["Hash"] = plugin_hash
                     if item["Hash"] == hash_code:
                         self.update_count += 1
                         self.update_list.append(item["Name"])
@@ -370,6 +359,8 @@ class Ui_MainWindow(QObject):  # 继承自 QObject
         self.spinner_movie = None  # 新增旋转图标动画
         self.plugin_updater = None  # 新增插件更新线程实例
         self.MainWindow = None
+        self.filter_input = None  # 新增筛选输入框
+        self.favorite_checkbox = None  # 新增收藏复选框
 
     def _setup_proxy_layout(self):
         """
@@ -403,7 +394,7 @@ class Ui_MainWindow(QObject):  # 继承自 QObject
         proxy_layout.addWidget(self.spinner_label)
 
         # 第二个按钮，重命名为 git 并绑定 Git 更新方法
-        button2 = QtWidgets.QPushButton("git")
+        button2 = QtWidgets.QPushButton("Git")
         proxy_layout.addWidget(button2)
         button2.clicked.connect(self.start_git_update)
 
@@ -411,13 +402,18 @@ class Ui_MainWindow(QObject):  # 继承自 QObject
         spacer = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         proxy_layout.addItem(spacer)
 
-        # 右上角第一个按钮
-        right_button1 = QtWidgets.QPushButton("右上按钮1")
-        proxy_layout.addWidget(right_button1)
+        # 添加筛选输入框
+        self.filter_input = QtWidgets.QLineEdit()
+        self.filter_input.setPlaceholderText("按名称筛选")
+        # 绑定回车键事件到 apply_filter 方法
+        self.filter_input.returnPressed.connect(self.apply_filter)
+        proxy_layout.addWidget(self.filter_input)
 
-        # 右上角第二个按钮
-        right_button2 = QtWidgets.QPushButton("右上按钮2")
-        proxy_layout.addWidget(right_button2)
+        # 添加收藏复选框
+        self.favorite_checkbox = QtWidgets.QCheckBox("只显示收藏")
+        # 绑定复选框状态改变信号到 apply_filter 方法
+        self.favorite_checkbox.stateChanged.connect(self.apply_filter)
+        proxy_layout.addWidget(self.favorite_checkbox)
 
         return proxy_layout
 
@@ -630,3 +626,16 @@ class Ui_MainWindow(QObject):  # 继承自 QObject
             "上传",
             f"更新完成，共更新{update_count}个插件，更新列表：\n{update_list}"
         )
+
+    def apply_filter(self):
+        filter_text = self.filter_input.text().lower()
+        show_favorites = self.favorite_checkbox.isChecked()
+
+        for (ui, _, _), plugin in zip(self.ui_items, self.plugin_list):
+            name = plugin.get("Name", "").lower()
+            is_favorite = plugin.get("is_favorite", False)
+
+            name_match = filter_text in name
+            favorite_match = not show_favorites or is_favorite
+            # print(plugin["Name"])
+            ui.set_visible(name_match and favorite_match)
