@@ -5,7 +5,7 @@ import sys
 import json
 import requests
 from PyQt5 import QtWidgets
-from ui.Ui_main import Ui_MainWindow, PluginListUpdater
+from ui.Ui_main import Ui_MainWindow, PluginListUpdater, SETTING_PATH
 import os
 import time
 from datetime import datetime, timedelta
@@ -20,9 +20,10 @@ class MainWindow(QtWidgets.QWidget):
         super().__init__()
         self.plugin_list = []
         self.ui = Ui_MainWindow()
-        self.ui.setupUi(self)
+        self.show()
+        self.start_time = time.time()
         # 程序启动时读取缓存
-        self.plugin_updater = PluginListUpdater(settings_fp="settings.json", force_update=False)
+        self.plugin_updater = PluginListUpdater(settings_fp=SETTING_PATH, force_update=False)
         self.plugin_updater.plugin_list_updated.connect(self.on_plugin_list_updated)
         self.plugin_updater.start()
 
@@ -34,13 +35,13 @@ class MainWindow(QtWidgets.QWidget):
         """
         self.plugin_list = new_plugin_list
         # 调用 Ui_MainWindow 的 setupUi 方法更新界面
-        self.ui.setupUi(self, new_plugin_list, rebuild=True)
+        self.ui.setupUi(self, new_plugin_list)
 
     def manual_update(self):
         """
         处理手动更新操作，强制从互联网拉取更新。
         """
-        self.plugin_updater = PluginListUpdater(settings_fp="settings.json", force_update=True)
+        self.plugin_updater = PluginListUpdater(settings_fp=SETTING_PATH, force_update=True)
         self.plugin_updater.plugin_list_updated.connect(self.on_plugin_list_updated)
         self.plugin_updater.start()
 
@@ -49,5 +50,4 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     # 将 plugin_list 传递给 MainWindow 构造函数
     window = MainWindow()
-    window.show()
     sys.exit(app.exec_())

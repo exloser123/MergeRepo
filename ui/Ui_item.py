@@ -2,12 +2,47 @@ from PyQt5 import QtWidgets, QtCore, QtGui
 import json
 import os
 import hashlib
+from datetime import datetime  # 将导入移到文件开头
+import sys
 
-# 获取当前脚本所在目录
-script_dir = os.path.dirname(os.path.abspath(__file__))
-# 构建图标文件的绝对路径
-like_path = os.path.join(script_dir, "..", "img", "like.png")
-notlike_path = os.path.join(script_dir, "..", "img", "notlike.png")
+
+# # 添加打包后路径处理
+# if getattr(sys, 'frozen', False):
+#     # 打包后环境
+#     base_path = sys._MEIPASS
+# else:
+#     # 开发环境
+#     base_path = os.path.dirname(os.path.abspath(__file__))
+#     # 向上两级目录（因为Ui_item.py在ui子目录下）
+#     base_path = os.path.dirname(os.path.dirname(base_path))
+
+# ==== 修改路径基础目录定义 ====
+# 判断是否为打包环境（exe运行）
+if getattr(sys, 'frozen', False):
+    # 打包后：获取 main_window.exe 所在目录
+    exe_path = sys.executable
+    BASE_DIR = os.path.dirname(exe_path)  # 正确定义为 BASE_DIR
+else:
+    # 开发环境：获取项目根目录（Ui_item.py 位于 ui 子目录，需向上两级）
+    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+    BASE_DIR = os.path.dirname(SCRIPT_DIR)  # 项目根目录
+
+# 构建图标文件的绝对路径（将 base_path 修正为 BASE_DIR）
+# 新增：导入 importlib.resources
+from importlib.resources import files
+
+# ==== 删除原有 base_path/BASE_DIR 定义，使用资源包访问 ====
+# 收藏图标通过 importlib.resources 访问
+like_path = str(files("img").joinpath("like.png"))
+notlike_path = str(files("img").joinpath("notlike.png"))
+
+# 配置文件路径仍使用原逻辑
+if getattr(sys, 'frozen', False):
+    BASE_DIR = os.path.dirname(sys.executable)
+else:
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MYREPO_PATH = os.path.join(BASE_DIR, "MyRepo.json")
+SETTING_PATH = os.path.join(BASE_DIR, "settings.json")
 
 
 class Ui_Form(QtCore.QObject):
@@ -184,24 +219,14 @@ class Ui_Form(QtCore.QObject):
 
         :param plugin_hash: 插件的哈希值
         """
-        my_repo_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "MyRepo.json")
-        settings_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "settings.json")
+        print("当前程序目录:", BASE_DIR)
+        print("MyRepo.json 路径:", MYREPO_PATH)
         for plugin in self.plugin_list:
-            # "Hash"值如果没有就生成
-            # if "Hash" not in plugin:
-            #     if "URL" in plugin:
-            #         print(plugin["URL"])
-            #     if "Name" in plugin:
-            #         print(plugin["Name"])
-            #     if "URL" not in plugin or "Name" not in plugin:
-            #         continue
-            #     # 计算Hash值
-            #     combined_str = (plugin["URL"] + plugin["Name"]).encode('utf-8')
-            #     plugin_hash = hashlib.md5(combined_str).hexdigest()
             if plugin["Hash"] == plugin_hash:
                 # 切换收藏状态
                 plugin["is_favorite"] = not plugin["is_favorite"]
                 self.is_favorite = plugin["is_favorite"]
+                print(self.is_favorite)
                 # 更新图标显示
                 icon_path = like_path if self.is_favorite else notlike_path
                 self.favorite_label.setPixmap(
@@ -209,34 +234,54 @@ class Ui_Form(QtCore.QObject):
                 )
 
                 # 读取并更新 MyRepo.json 文件
-                favorite_dict = {}
-                if os.path.exists(my_repo_path):
-                    try:
-                        with open(my_repo_path, "r", encoding="utf-8") as f:
-                            favorite_dict = json.load(f)
-                    except Exception as e:
-                        print(f"读取 {my_repo_path} 时出错: {e}")
+                favorite_dict = self._read_favorite_dict()
                 favorite_dict[str(plugin_hash)] = self.is_favorite
-                try:
-                    with open(my_repo_path, "w", encoding="utf-8") as f:
-                        json.dump(favorite_dict, f, ensure_ascii=False, indent=4)
-                    # 更新 settings.json 中的 my_plugin_time 字段
-                    if os.path.exists(settings_path):
-                        try:
-                            from datetime import datetime
-                            current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                            with open(settings_path, "r", encoding="utf-8") as f:
-                                settings = json.load(f)
-                            settings["my_plugin_time"] = current_time
-                            with open(settings_path, "w", encoding="utf-8") as f:
-                                json.dump(settings, f, ensure_ascii=False, indent=4)
-                        except Exception as e:
-                            print(f"更新 {settings_path} 时出错: {e}")
-                except Exception as e:
-                    print(f"写入 {my_repo_path} 时出错: {e}")
+                self._write_favorite_dict(favorite_dict)
+
+                # 更新 settings.json 中的 my_plugin_time 字段
+                self._update_settings_timestamp()
 
                 return
         print(f"未找到 Hash 值为 {plugin_hash} 的插件")
+
+    def _read_favorite_dict(self):
+        """读取 MyRepo.json 文件内容"""
+        favorite_dict = {}
+        if os.path.exists(MYREPO_PATH):
+            try:
+                with open(MYREPO_PATH, "r", encoding="utf-8") as f:
+                    favorite_dict = json.load(f)
+            except FileNotFoundError:
+                print(f"{MYREPO_PATH} 文件未找到")
+            except json.JSONDecodeError as e:
+                print(f"解析 {MYREPO_PATH} 时出错: {e}")
+        return favorite_dict
+
+    def _write_favorite_dict(self, favorite_dict):
+        """写入 MyRepo.json 文件"""
+        try:
+            with open(MYREPO_PATH, "w", encoding="utf-8") as f:
+                json.dump(favorite_dict, f, ensure_ascii=False, indent=4)
+        except Exception as e:
+            print(f"写入 {MYREPO_PATH} 时出错: {e}")
+
+    def _update_settings_timestamp(self):
+        """更新 settings.json 中的 my_plugin_time 字段"""
+        if os.path.exists(SETTING_PATH):
+            print("settings.json 存在")
+            try:
+                current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                with open(SETTING_PATH, "r", encoding="utf-8") as f:
+                    settings = json.load(f)
+                settings["my_plugin_time"] = current_time
+                with open(SETTING_PATH, "w", encoding="utf-8") as f:
+                    json.dump(settings, f, ensure_ascii=False, indent=4)
+            except FileNotFoundError:
+                print(f"{SETTING_PATH} 文件未找到")
+            except json.JSONDecodeError as e:
+                print(f"解析 {SETTING_PATH} 时出错: {e}")
+            except Exception as e:
+                print(f"更新 {SETTING_PATH} 时出错: {e}")
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
@@ -265,3 +310,4 @@ class Ui_Form(QtCore.QObject):
         :param visible: 布尔值，True 表示可见，False 表示不可见
         """
         self.Form.setVisible(visible)
+        self.widget_details.setVisible(False)

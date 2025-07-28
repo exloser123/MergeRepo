@@ -10,16 +10,26 @@ from PyQt5 import QtWidgets, QtCore, QtGui  # 已有导入
 from PyQt5.QtCore import QObject, QThread, pyqtSignal  # 新增 QObject 导入
 from ui.Ui_item import Ui_Form
 from PIL import Image  # 导入 Pillow 库
+import sys
+# 新增：导入 importlib.resources
+from importlib.resources import files
 
-# 获取当前脚本所在目录
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-# 构建图标文件的绝对路径
-ICON_PATH = os.path.join(SCRIPT_DIR, "..", "img", "icon.png")
-# 缓存目录
-CACHE_DIR = os.path.join(SCRIPT_DIR, "..", "icon_cache")
+# ==== 删除原有 BASE_DIR 路径定义，替换为资源包访问 ====
+# 所有图像资源通过 importlib.resources 访问（无需关心物理路径）
+ICON_PATH = str(files("img").joinpath("icon.png"))  # 添加 str() 转换
+CACHE_DIR = os.path.join(os.path.dirname(sys.executable) if getattr(sys, 'frozen', False) else os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "icon_cache")
 os.makedirs(CACHE_DIR, exist_ok=True)
-# setting.json 文件路径
-SETTING_PATH = os.path.join(SCRIPT_DIR, "..", "settings.json")
+
+# 配置文件路径仍使用原逻辑（非资源文件）
+if getattr(sys, 'frozen', False):
+    BASE_DIR = os.path.dirname(sys.executable)
+else:
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SETTING_PATH = os.path.join(BASE_DIR, "settings.json")
+MYREPO_PATH = os.path.join(BASE_DIR, "MyRepo.json")
+CACHE_PLUGIN_PATH = os.path.join(BASE_DIR, "cache_plugin.json")
+REPO_INDEX_PATH = os.path.join(BASE_DIR, "RepoIndex.txt")
+PLUGIN_MASTER_PATH = os.path.join(BASE_DIR, "PluginMaster.json")
 
 
 class IconLoader(QtCore.QThread):
@@ -121,7 +131,7 @@ class PluginListUpdater(QThread):
     """
     plugin_list_updated = pyqtSignal(list)
 
-    def __init__(self, settings_fp="settings.json", force_update=False):
+    def __init__(self, settings_fp=SETTING_PATH, force_update=False):
         super().__init__()
         self.settings_fp = settings_fp
         self.force_update = force_update
@@ -207,7 +217,7 @@ class PluginListUpdater(QThread):
         except Exception as e:
             print(f"写入缓存文件 {cache_plugin_fp} 时出错: {e}")
 
-    def update_favorite_status(self, plugin_list, my_plugin_fp="MyRepo.json"):
+    def update_favorite_status(self, plugin_list, my_plugin_fp=MYREPO_PATH):
         """
         读取 MyRepo.json 文件，如果文件不存在则创建，更新 plugin_list 里的 "is_favorite" 字段。
 
@@ -215,6 +225,8 @@ class PluginListUpdater(QThread):
         :param my_plugin_fp: MyRepo.json 文件的路径，默认为 "MyRepo.json"
         :return: 更新后的插件列表
         """
+        print("当前程序目录:", BASE_DIR)
+        print("MyRepo.json 路径:", my_plugin_fp)
         favorite_dict = {}
         try:
             with open(my_plugin_fp, "r", encoding="utf-8") as f:
@@ -244,9 +256,9 @@ class PluginListUpdater(QThread):
             with open(self.settings_fp, "r", encoding="utf-8") as f:
                 settings = json.load(f)
                 proxies = settings.get("proxy", {})
-                repo_index_fp = settings.get("repo_index_fp", "RepoIndex.txt")
-                cache_plugin_fp = settings.get("cache_plugin_fp", "cache_plugin.json")
-                my_plugin_fp = settings.get("my_plugin_fp", "MyRepo.json")
+                repo_index_fp = REPO_INDEX_PATH
+                cache_plugin_fp = CACHE_PLUGIN_PATH
+                my_plugin_fp = MYREPO_PATH
                 cache_plugin_time = settings.get("cache_plugin_time", "2023-01-01 00:00:00")
         except FileNotFoundError:
             print(f"未找到设置文件 {self.settings_fp}")
@@ -274,7 +286,7 @@ class Git_Updater(QThread):
     """
     update_finished = pyqtSignal(int, list)  # 信号，参数为更新数量和更新列表
 
-    def __init__(self, plugin_list, my_repo_fp="MyRepo.json", git_repo_fp="PluginMaster.json"):
+    def __init__(self, plugin_list, my_repo_fp=MYREPO_PATH, git_repo_fp=PLUGIN_MASTER_PATH):
         super().__init__()
         self.plugin_list = plugin_list
         self.my_repo_fp = my_repo_fp
@@ -331,7 +343,7 @@ class Git_Updater(QThread):
         # 执行 git 提交和推送操作
         os.system("git add .")
         os.system('git commit -m "update Repo"')
-        os.system("git push origin main")
+        os.system("git push")
 
 
     def run(self):
@@ -385,12 +397,12 @@ class Ui_MainWindow(QObject):  # 继承自 QObject
 
         # 旋转图标标签
         self.spinner_label = QtWidgets.QLabel()
-        self.spinner_movie = QtGui.QMovie(os.path.join(SCRIPT_DIR, "..", "img", "spin.gif"))
+        # 使用 importlib.resources 访问 spin.gif
+        self.spinner_movie = QtGui.QMovie(str(files("img").joinpath("spin.gif")))
         self.spinner_label.setMovie(self.spinner_movie)
-        # 缩放至30*30，scale
         self.spinner_label.setScaledContents(True)
         self.spinner_label.setFixedSize(30, 30)
-        self.spinner_label.hide()  # 初始隐藏
+        self.spinner_label.hide()
         proxy_layout.addWidget(self.spinner_label)
 
         # 第二个按钮，重命名为 git 并绑定 Git 更新方法
@@ -437,7 +449,7 @@ class Ui_MainWindow(QObject):  # 继承自 QObject
         :param plugin_list: 插件列表
         :param rebuild: 是否重新构建 UI，默认为 False
         """
-
+        import time
         self.MainWindow = MainWindow
 
         if not rebuild:
@@ -456,16 +468,19 @@ class Ui_MainWindow(QObject):  # 继承自 QObject
                 MainWindow.showEvent = self.handle_show_event
 
         if rebuild:
-            # 清空现有插件项
+            # 清空现有插件项和间隔项
             for i in reversed(range(self.scroll_layout.count())):
                 item = self.scroll_layout.itemAt(i)
                 if item.widget():
                     item.widget().deleteLater()
+                elif isinstance(item, QtWidgets.QSpacerItem):
+                    self.scroll_layout.removeItem(item)
 
         self.plugin_list = plugin_list
         self.ui_items = []
 
-        for plugin in plugin_list:
+        self.start_time = time.time()
+        for index, plugin in enumerate(plugin_list, start=1):
             item_widget = QtWidgets.QWidget()
             name = plugin.get("Name", "未知插件")
             info = plugin.get("Description", "暂无插件信息")
@@ -481,9 +496,21 @@ class Ui_MainWindow(QObject):  # 继承自 QObject
 
             self.scroll_layout.addWidget(item_widget)
 
-        # 当 rebuild 为 True 时，执行图标加载操作
-        if rebuild:
-            self.load_icons()
+            # 每添加 10 个插件项，处理一次事件队列
+            if index % 10 == 0:
+                QtWidgets.QApplication.processEvents()
+
+        # scroll_layout的最后加上一个Spacers，如果列表的item数量不够，item始终保持在顶部
+        spacer = QtWidgets.QSpacerItem(0, 40, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Expanding)
+        self.scroll_layout.addItem(spacer)
+
+        # 显示主窗口
+        MainWindow.show()
+        self.end_time = time.time()
+        print(f"插件列表加载耗时: {self.end_time - self.start_time} 秒")
+
+        # 启动图标加载
+        self.load_icons()
 
     def load_icons(self):
         """
