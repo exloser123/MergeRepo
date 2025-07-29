@@ -21,20 +21,5 @@
         "SupportsProfiles": true,
         "TestingAssemblyVersion": "3.2.3.0",
         "TestingDalamudApiLevel": 10
-    },
-    {
-        "AcceptsFeedback": true,
-        "ApplicableVersion": "any",
-        "AssemblyVersion": "0.1.9.0",
-        "Author": "veyn, AtmoOmen",
-        "DalamudApiLevel": 12,
-        "Description": "不仅会自动寻路, 还能自动避障",
-        "DownloadLinkInstall": "https://github.com/AtmoOmen/ffxiv_navmesh-cn/releases/download/0.1.9.0/latest.zip",
-        "DownloadLinkUpdate": "https://github.com/AtmoOmen/ffxiv_navmesh-cn/releases/download/0.1.9.0/latest.zip",
-        "IconUrl": "https://raw.githubusercontent.com/AtmoOmen/ffxiv_navmesh-cn/master/icon2.png",
-        "InternalName": "vnavmesh",
-        "Name": "vnavmesh",
-        "Punchline": "行遍千里",
-        "RepoUrl": "https://github.com/AtmoOmen/ffxiv_navmesh-cn"
     }
 ]
