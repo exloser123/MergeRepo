@@ -6,35 +6,6 @@ from datetime import datetime  # 将导入移到文件开头
 import sys
 
 
-# # 添加打包后路径处理
-# if getattr(sys, 'frozen', False):
-#     # 打包后环境
-#     base_path = sys._MEIPASS
-# else:
-#     # 开发环境
-#     base_path = os.path.dirname(os.path.abspath(__file__))
-#     # 向上两级目录（因为Ui_item.py在ui子目录下）
-#     base_path = os.path.dirname(os.path.dirname(base_path))
-
-# ==== 修改路径基础目录定义 ====
-# 判断是否为打包环境（exe运行）
-if getattr(sys, 'frozen', False):
-    # 打包后：获取 main_window.exe 所在目录
-    exe_path = sys.executable
-    BASE_DIR = os.path.dirname(exe_path)  # 正确定义为 BASE_DIR
-else:
-    # 开发环境：获取项目根目录（Ui_item.py 位于 ui 子目录，需向上两级）
-    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-    BASE_DIR = os.path.dirname(SCRIPT_DIR)  # 项目根目录
-
-# 构建图标文件的绝对路径（将 base_path 修正为 BASE_DIR）
-# 新增：导入 importlib.resources
-from importlib.resources import files
-
-# ==== 删除原有 base_path/BASE_DIR 定义，使用资源包访问 ====
-# 收藏图标通过 importlib.resources 访问
-like_path = str(files("img").joinpath("like.png"))
-notlike_path = str(files("img").joinpath("notlike.png"))
 
 # 配置文件路径仍使用原逻辑
 if getattr(sys, 'frozen', False):
@@ -43,6 +14,8 @@ else:
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MYREPO_PATH = os.path.join(BASE_DIR, "MyRepo.json")
 SETTING_PATH = os.path.join(BASE_DIR, "settings.json")
+like_path = os.path.join(BASE_DIR, "img", "like.png")
+notlike_path = os.path.join(BASE_DIR, "img", "notlike.png")
 
 
 class Ui_Form(QtCore.QObject):

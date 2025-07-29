@@ -11,20 +11,18 @@ from PyQt5.QtCore import QObject, QThread, pyqtSignal  # 新增 QObject 导入
 from ui.Ui_item import Ui_Form
 from PIL import Image  # 导入 Pillow 库
 import sys
-# 新增：导入 importlib.resources
-from importlib.resources import files
-
-# ==== 删除原有 BASE_DIR 路径定义，替换为资源包访问 ====
-# 所有图像资源通过 importlib.resources 访问（无需关心物理路径）
-ICON_PATH = str(files("img").joinpath("icon.png"))  # 添加 str() 转换
-CACHE_DIR = os.path.join(os.path.dirname(sys.executable) if getattr(sys, 'frozen', False) else os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "icon_cache")
-os.makedirs(CACHE_DIR, exist_ok=True)
 
 # 配置文件路径仍使用原逻辑（非资源文件）
 if getattr(sys, 'frozen', False):
     BASE_DIR = os.path.dirname(sys.executable)
 else:
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ICON_PATH = os.path.join(BASE_DIR, "img", "icon.png")
+SPINNER_PATH = os.path.join(BASE_DIR, "img", "spin.gif")
+CACHE_DIR = os.path.join(BASE_DIR, "icon_cache")
+os.makedirs(CACHE_DIR, exist_ok=True)
+
+
 SETTING_PATH = os.path.join(BASE_DIR, "settings.json")
 MYREPO_PATH = os.path.join(BASE_DIR, "MyRepo.json")
 CACHE_PLUGIN_PATH = os.path.join(BASE_DIR, "cache_plugin.json")
@@ -354,7 +352,6 @@ class Git_Updater(QThread):
         my_repo_list = self._read_my_repo()
         processed_list = self._process_repo_list(my_repo_list)
         self._save_to_plugin_master(processed_list)
-        self._commit_and_push()
         self.update_finished.emit(self.update_count, self.update_list)
 
 class Ui_MainWindow(QObject):  # 继承自 QObject
@@ -398,7 +395,7 @@ class Ui_MainWindow(QObject):  # 继承自 QObject
         # 旋转图标标签
         self.spinner_label = QtWidgets.QLabel()
         # 使用 importlib.resources 访问 spin.gif
-        self.spinner_movie = QtGui.QMovie(str(files("img").joinpath("spin.gif")))
+        self.spinner_movie = QtGui.QMovie(SPINNER_PATH)
         self.spinner_label.setMovie(self.spinner_movie)
         self.spinner_label.setScaledContents(True)
         self.spinner_label.setFixedSize(30, 30)

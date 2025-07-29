@@ -2,14 +2,9 @@
 此模块负责调用 fetch_plugin_list 函数获取插件列表，并初始化主窗口。
 """
 import sys
-import json
-import requests
 from PyQt5 import QtWidgets
 from ui.Ui_main import Ui_MainWindow, PluginListUpdater, SETTING_PATH
-import os
 import time
-from datetime import datetime, timedelta
-import threading
 
 
 class MainWindow(QtWidgets.QWidget):

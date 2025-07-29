@@ -1,12 +1,11 @@
 # -*- mode: python ; coding: utf-8 -*-
 
-
 a = Analysis(
     ['main_window.py'],
     pathex=[],
     binaries=[],
-    datas=[('img', 'img'), ('settings.json', '.'), ('MyRepo.json', '.'), ('RepoIndex.txt', '.'), ('PluginMaster.json', '.'), ('icon_cache', 'icon_cache'), ('cache_plugin.json', '.')],
-    hiddenimports=[],
+    datas=[('settings.json', '.'), ('icon_cache', 'icon_cache'), ('ui', 'ui'),('img', 'img'),('RepoIndex.txt', '.')],
+    hiddenimports=['ui', 'json', 'requests', 'PIL', 'PIL.Image'],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
@@ -27,15 +26,19 @@ exe = EXE(
     strip=False,
     upx=True,
     console=True,
+    onefile=False,
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
 )
+
+# 取消注释下面的COLLECT部分
 coll = COLLECT(
     exe,
     a.binaries,
+    a.zipfiles,
     a.datas,
     strip=False,
     upx=True,
