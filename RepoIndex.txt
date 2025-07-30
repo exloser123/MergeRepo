@@ -22,3 +22,4 @@ https://puni.sh/api/repository/det
 https://raw.githubusercontent.com/MisaUo/DalamudPlugins/main/pluginmaster.json
 ## https://plugins.carvel.li/
 https://raw.githubusercontent.com/Karlin-Z/DalamudPlugins/refs/heads/main/pluginmaster.json
+https://raw.githubusercontent.com/marzent/IINACT/refs/heads/main/repo.json
