@@ -316,5 +316,31 @@
         "Name": "A Realm Recorded Lite",
         "Punchline": "A Realm Recorded 精简版\n相比原版: 四分之一的体积、更低的待机消耗、全匿名化的录像处理、全副本可录像",
         "RepoUrl": "https://github.com/AtmoOmen/ARealmRecordedLite"
+    },
+    {
+        "ApplicableVersion": "any",
+        "AssemblyVersion": "2.8.3.10",
+        "Author": "Usagi",
+        "DalamudApiLevel": 12,
+        "Description": "一个在类ACT环境中运行FFXIV_ACT_Plugin的插件，包含为现代.NET重写的Overlay Plugin",
+        "DownloadCount": 337,
+        "DownloadLinkInstall": "https://meowrs.com/https://github.com/MeowZWR/IINACT/releases/download/v2.8.3.10/IINACT.zip",
+        "DownloadLinkTesting": "https://meowrs.com/https://github.com/MeowZWR/IINACT/releases/download/v2.8.3.10/IINACT.zip",
+        "DownloadLinkUpdate": "https://meowrs.com/https://github.com/MeowZWR/IINACT/releases/download/v2.8.3.10/IINACT.zip",
+        "IconUrl": "https://static.meowrs.com/Plugins/IINACT/icon.png",
+        "InternalName": "IINACT",
+        "IsHide": "False",
+        "IsTestingExclusive": "False",
+        "LoadPriority": 0,
+        "Name": "IINACT",
+        "Punchline": "A parsing plugin.",
+        "RepoUrl": "https://github.com/MeowZWR/IINACT",
+        "Tags": [
+            "parsing",
+            "plugin",
+            "ACT",
+            "Pants"
+        ],
+        "TestingAssemblyVersion": "2.8.3.10"
     }
 ]
