@@ -372,31 +372,5 @@
         "Name": "XIVSlothComboX",
         "Punchline": "Condenses combos and mutually exclusive abilities onto a single button - and then some.",
         "RepoUrl": "https://github.com/44451516/XIVSlothCombo/"
-    },
-    {
-        "ApplicableVersion": "any",
-        "AssemblyVersion": "1.3.4.2",
-        "Author": "UnknownX",
-        "CategoryTags": [
-            "jobs"
-        ],
-        "Changelog": "",
-        "DalamudApiLevel": 13,
-        "Description": "Improves aspects of the battle system with action stacks (like MOAction) and various QoL settings.",
-        "DownloadCount": 1101,
-        "DownloadLinkInstall": "https://github.com/UnknownX7/ReAction/releases/download/v1.3.4.2/latest.zip",
-        "DownloadLinkTesting": "https://github.com/UnknownX7/ReAction/releases/download/v1.3.4.2/latest.zip",
-        "DownloadLinkUpdate": "https://github.com/UnknownX7/ReAction/releases/download/v1.3.4.2/latest.zip",
-        "IconUrl": "",
-        "ImageUrls": [
-            ""
-        ],
-        "InternalName": "ReAction",
-        "IsHide": false,
-        "IsTestingExclusive": false,
-        "LastUpdate": "1754732126",
-        "Name": "ReAction [Grinch API 13]",
-        "Punchline": "QoL for the battle system.",
-        "RepoUrl": "https://github.com/UnknownX7/ReAction"
     }
 ]
